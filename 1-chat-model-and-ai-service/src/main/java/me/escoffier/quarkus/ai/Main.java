@@ -24,7 +24,7 @@ public class Main implements QuarkusApplication {
                 + model.chat("Quel jour est on aujourd'hui ?"));
         System.out.println("-------------------");
         System.out.println("AI Service: "
-                + ai.answer("What is the meaning of life?"));
+                + ai.answer("What date is it today?"));
         return 0;
     }
 
