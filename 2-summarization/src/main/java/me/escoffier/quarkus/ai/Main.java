@@ -20,7 +20,7 @@ public class Main implements QuarkusApplication {
 
     @Override
     public int run(String... args) throws IOException {
-        var article = Files.readString(new File("./2-summarization/load-shedding.txt").toPath());
+        var article = Files.readString(new File("./load-shedding.txt").toPath());
         System.out.println(ai.summarize(article));
         return 0;
     }
@@ -32,7 +32,7 @@ public class Main implements QuarkusApplication {
 
             # OUTPUT SECTIONS
             - Combine all of your understanding of the content into a single, 20-word sentence in a section called ONE SENTENCE SUMMARY:.
-            - Output the 10 most important points of the content as a list with no more than 15 words per point into a section called MAIN POINTS:.            
+            - Output the 10 most important points of the content as a list with no more than 15 words per point into a section called MAIN POINTS:
             - Output a list of the 5 best takeaways from the content in a section called TAKEAWAYS:.
             
             # OUTPUT INSTRUCTIONS            

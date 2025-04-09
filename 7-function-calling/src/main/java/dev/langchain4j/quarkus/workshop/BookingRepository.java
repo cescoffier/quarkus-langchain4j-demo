@@ -3,6 +3,7 @@ package dev.langchain4j.quarkus.workshop;
 import dev.langchain4j.agent.tool.Tool;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.control.ActivateRequestContext;
 import jakarta.transaction.Transactional;
 
 import java.time.LocalDate;
@@ -31,6 +32,7 @@ public class BookingRepository implements PanacheRepository<Booking> {
         delete(booking);
     }
 
+    @ActivateRequestContext
     @Tool("List booking for a customer")
     public List<Booking> listBookingsForCustomer(String customerName, String customerSurname) {
         var found = Customer.find("firstName = ?1 and lastName = ?2", customerName, customerSurname).singleResultOptional();
@@ -41,6 +43,7 @@ public class BookingRepository implements PanacheRepository<Booking> {
     }
 
 
+    @ActivateRequestContext
     @Tool("Get booking details")
     public Booking getBookingDetails(long bookingId, String customerFirstName, String customerLastName) {
         Booking found = findById(bookingId);

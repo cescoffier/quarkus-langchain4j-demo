@@ -12,7 +12,7 @@ import jakarta.inject.Inject;
 public class Main implements QuarkusApplication {
 
     @Inject
-    ChatLanguageModel chat;
+    ChatLanguageModel model;
 
     @Inject
     MyAiService ai;
@@ -21,7 +21,7 @@ public class Main implements QuarkusApplication {
     @Override
     public int run(String... args) {
         System.out.println("Chat Model : "
-                + chat.generate("Why is the sky blue?"));
+                + model.chat("Quel jour est on aujourd'hui ?"));
         System.out.println("-------------------");
         System.out.println("AI Service: "
                 + ai.answer("What is the meaning of life?"));
