@@ -45,7 +45,7 @@ export class DemoTitle extends LitElement {
             <div class="explanation">
                 This demo shows how an LLM can triage reviews automatically.
                 This frontend lets you write a review about a financial product and submit it to the backend.
-                The backend use LLM (Mistral on OpenShift.ai) to evaluate the review and provide a response.
+                The backend use OpenAI LLM to evaluate the review and provide a response.
             </div>
         `
     }

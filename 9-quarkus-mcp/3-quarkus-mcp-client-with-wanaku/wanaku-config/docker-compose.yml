@@ -1,0 +1,16 @@
+services:
+  wanaku-tool-service-telegram:
+    image: quay.io/wanaku/wanaku-tool-service-telegram:wanaku-0.0.4
+    ports:
+      - "9000:9000"
+    volumes:
+      - ~/.wanaku/router:/home/default/.wanaku/router
+
+  wanaku-router:
+    depends_on:
+      - wanaku-tool-service-telegram
+    image: quay.io/wanaku/wanaku-router:wanaku-0.0.4
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/.wanaku/router:/home/default/.wanaku/router
